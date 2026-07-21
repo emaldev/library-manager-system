@@ -10,6 +10,15 @@ public class FileManager {
     // 3. Use a loop to write each book to the file in the format "id,title,author,year"
     // 4. Handle errors using try-catch
     }
+        public static void loadFromFile(String fileName){
+        // 1. Create a new Library
+    // 2. Read the file using Scanner
+    // 3. Split each line using split(",")
+    // 4. Create a new Book with id, title, author, and year
+    // 5. Add the book to the Library
+    // 6. Return the Library
+
+    }
     
 
 }
