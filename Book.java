@@ -8,7 +8,7 @@ public class Book {
     private static int counter = 1; // To generate an automatic ID
 
     // Creating a counstractor 
-    public  Book(String title , String author, int year, int id){
+    public  Book(String title , String author, int year){
           this.title = title;
           this.author = author;
           this.year = year;
