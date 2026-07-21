@@ -55,6 +55,16 @@ public class Library {
     }
     // Method for display all books .
     public void displayAllBooks(){
+       if(books.isEmpty()){
+        System.out.println("No books in the library.");
+       }else{
+    
+        // this is the for-each loop in the ArrayList .
+        for(Book b : books){ 
+            System.out.println(b);
+        }
+
+       }
 
     }
 
