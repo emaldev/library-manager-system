@@ -39,6 +39,18 @@ public class Library {
     }
     // Method for Searched by title a book 
     public void searchByTitle(String title){
+        boolean foundTitle = false;
+        for(int i = 0; i < books.size(); i++){
+            if(books.get(i).getTitle().equalsIgnoreCase(title)){
+
+                foundTitle = true;
+                System.out.println("This is your search: " + books.get(i) );
+                
+            }
+        }
+        if(!foundTitle){
+            System.out.println("No book found with that title.");
+        }
         
     }
     // Method for display all books .
