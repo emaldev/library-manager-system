@@ -1,3 +1,4 @@
+// in this class , information from books is maintained for the user.
 public class Book {
     
     private String title;
@@ -14,6 +15,10 @@ public class Book {
           this.id = counter++;
           
     }
+   // Creat to String 
+   public String toString(){
+    return "ID : " + id + ", Title: " + title + ", Author: " + author + ", Year: " + year ;
+   }
 
 
 }
