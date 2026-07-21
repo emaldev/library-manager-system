@@ -23,6 +23,10 @@ public class Book {
    public int getId(){
     return id;
    }
+   // Adding a method fo return title in library.
+   public String getTitle(){
+    return title;
+   }
 
 
 }
