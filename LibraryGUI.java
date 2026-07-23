@@ -8,7 +8,10 @@ import javax.swing.JPanel;
 
 
 public class LibraryGUI {
+    
+   
     public static void main(String[] args){
+        Library library = new Library();
 
         JFrame frame = new JFrame("Library Management System");// Title the library bar
         frame.setSize(600, 400);// Panel size 
@@ -44,7 +47,7 @@ public class LibraryGUI {
        
         // for title 
         JFrame addframe = new JFrame("Add Book");
-        JButton titleButton = new JButton("Add");
+        JButton addBookButton = new JButton("Add");
         JPanel addPanel = new JPanel();
            // for Author 
         JLabel authorLabel = new JLabel("Author:");
@@ -53,6 +56,9 @@ public class LibraryGUI {
         JLabel yearLabel = new JLabel("Year:");
         JTextField yearField = new JTextField(20);
 
+        String title = titleField.getText();
+        String authour = authorField.getText();
+        String year = yearField.getText();
 
         addPanel.add(titLabel);
         addPanel.add(titleField);
@@ -61,9 +67,11 @@ public class LibraryGUI {
         addPanel.add(authorField);
         addPanel.add(yearLabel);
         addPanel.add(yearField);
-        addPanel.add(titleButton);
+        addPanel.add(addBookButton);
        
         addframe.add(addPanel);
+        
+       
     
 
         addframe.setSize(600, 300);
