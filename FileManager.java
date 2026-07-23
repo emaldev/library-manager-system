@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 public class FileManager {
 
+    // This methome saves all boods in the library to a text file .
     public static void  saveToFile(String fileName, Library library){
         // 1. Get the books from the library
     // 2. Open the file using FileWriter
@@ -40,11 +41,12 @@ public class FileManager {
                 String line = input.nextLine();
                 String[] parts = line.split(",");
                 int id = Integer.parseInt(parts[0].trim());
-                String title = parts[1].trim();
-                String author = parts[2].trim();
-                int year = Integer.parseInt(parts[3].trim());
+                String title = parts[1].trim(); // title 
+                String author = parts[2].trim();// Author
+                int year = Integer.parseInt(parts[3].trim()); // Yeras 
 
-                library.addBook(new Book(title, author, year));
+                library.addBook(new Book(title, author, year));// Creat a new book and add it to the library .
+                
              
 
             }
