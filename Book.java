@@ -27,6 +27,14 @@ public class Book {
    public String getTitle(){
     return title;
    }
+   // Adding a methor for return author
+   public String getAuthor(){
+      return author;
+   }
+   // Adding a method for return Year
+   public int getYear(){
+      return year;
+   }
 
 
 }
