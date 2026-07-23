@@ -6,6 +6,7 @@ import java.io.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.FileReader;
+import java.io.IOException;
 public class FileManager {
 
     public static void  savaToFile(String fileName, Library library){
@@ -13,6 +14,16 @@ public class FileManager {
     // 2. Open the file using FileWriter
     // 3. Use a loop to write each book to the file in the format "id,title,author,year"
     // 4. Handle errors using try-catch
+
+    try(FileWriter writer = new FileWriter(fileName)){
+        for(Book b : library.getBooks()){
+            writer.write(b.getId() + ", " + b.getTitle() + ", " + b.getAuthor() + ", " + b.getYear() + "\n");
+        }
+    }
+    catch(IOException e){
+        e.printStackTrace();
+
+    }
 
           
     }
