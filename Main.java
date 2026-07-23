@@ -13,7 +13,7 @@ public class Main {
             System.out.println("4. Display All Books");
             System.out.println("5. Save to File");
             System.out.println("6. Load from File");
-            System.out.println("7 Exit");
+            System.out.println("7. Exit");
             System.out.println("Enter your choice: ");
             
             choice  =input.nextInt();
@@ -52,8 +52,13 @@ public class Main {
                     FileManager.saveToFile(fileName, library);
                     break;
                 case 6:
+                    System.out.println("Enter file name to load : ");
+                      fileName = input.nextLine();
+                     Library loadedLibrary = FileManager.loadFromFile(fileName);
+                     library = loadedLibrary;
                     break;
                 case 7:
+                    System.out.println("You hava exited the app We would be happy to see you again.");
                     break;
 
 
@@ -61,7 +66,7 @@ public class Main {
                 default:
                     break;
             }
-        }
+        }while(choice != 7);
         
     }
     
