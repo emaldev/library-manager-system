@@ -67,6 +67,10 @@ public class Library {
        }
 
     }
+    // Adding the Arrayliest book method.
+    public ArrayList<Book> getBooks(){
+        return books;
+    }
 
 }
     
