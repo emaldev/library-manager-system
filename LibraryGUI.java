@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JOptionPane;
 
 
 public class LibraryGUI {
@@ -108,6 +109,8 @@ public class LibraryGUI {
         });
         
         // search the book section.
+        JButton searchBookButton = new JButton("Search");
+        JTextField searchField = new JTextField(20);
         searchButton.addActionListener(e4 -> {
         JFrame searchFrame = new JFrame("Search Boook");
         
@@ -115,8 +118,8 @@ public class LibraryGUI {
         
         JLabel searchLabel = new JLabel("Enter Title:");
 
-        JTextField searchField = new JTextField(20);
-        JButton searchBookButton = new JButton("Search");
+        
+        
 
         JPanel searchPanel = new JPanel();
     
@@ -129,6 +132,18 @@ public class LibraryGUI {
  
         searchFrame.setVisible(true);
 
+        });
+        // search connect to the library.
+        searchBookButton.addActionListener(e5 -> {
+            String title = searchField.getText();
+
+            for(Book b: library.getBooks()){
+                if(b.getTitle().equalsIgnoreCase(title) ){
+                    // displaying the found book in the panel.
+                    JOptionPane.showMessageDialog(null, b.toString());
+                }
+            }
+            
         });
 
         panel.setBackground(Color.LIGHT_GRAY);
