@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 
 public class LibraryGUI {
@@ -49,16 +50,28 @@ public class LibraryGUI {
         JFrame addframe = new JFrame("Add Book");
         JButton addBookButton = new JButton("Add");
         JPanel addPanel = new JPanel();
-           // for Author 
+         // for Author 
         JLabel authorLabel = new JLabel("Author:");
         JTextField authorField = new JTextField(20);
         // for Years 
         JLabel yearLabel = new JLabel("Year:");
         JTextField yearField = new JTextField(20);
+        addBookButton.addActionListener(e2 ->{
 
         String title = titleField.getText();
         String authour = authorField.getText();
-        String year = yearField.getText();
+        int year = Integer.parseInt(yearField.getText());
+        // add book 
+        library.addBook(new Book(title, authour, year));
+        System.out.println("Book added successfully!");
+        library.displayAllBooks();
+
+        });
+    
+
+  
+
+       
 
         addPanel.add(titLabel);
         addPanel.add(titleField);
@@ -70,8 +83,7 @@ public class LibraryGUI {
         addPanel.add(addBookButton);
        
         addframe.add(addPanel);
-        
-       
+   
     
 
         addframe.setSize(600, 300);
@@ -79,6 +91,21 @@ public class LibraryGUI {
                 
       
        });
+               // display all books 
+       
+        displayButton.addActionListener(e3 ->{
+
+            JFrame displayFrame = new JFrame("All Books");
+            displayFrame .setSize(400, 500);
+
+            JTextArea textArea = new JTextArea();
+
+            for(Book b: library.getBooks()){
+            textArea.append(b.toString() + "\n");
+            }
+            displayFrame.add(textArea);
+            displayFrame.setVisible(true);
+        });
         
 
         panel.setBackground(Color.LIGHT_GRAY);
