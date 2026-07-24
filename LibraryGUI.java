@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JOptionPane;
 
@@ -87,7 +88,7 @@ public class LibraryGUI {
    
     
 
-        addframe.setSize(600, 300);
+        addframe.setSize(250, 200);
         addframe.setVisible(true);
                 
       
@@ -202,6 +203,30 @@ public class LibraryGUI {
             JOptionPane.showMessageDialog(null, "File saved successfully!");
         });
 
+        });
+        // section the load file 
+        loadButton.addActionListener(e10 -> {
+            JFrame loadFrame = new JFrame("Load File");
+            loadFrame.setSize(300, 250);
+            JLabel loadLabel  = new JLabel("File Name:");
+            JTextField loadField = new JTextField(15);
+            JButton loadFileButton = new JButton("Load");
+            JPanel loadPanel = new JPanel();
+
+            loadPanel.add(loadLabel);
+            loadPanel.add(loadField);
+            loadPanel.add(loadFileButton);
+
+            loadFrame.add(loadPanel);
+            loadFrame.setVisible(true);
+
+            loadFileButton.addActionListener(e11 ->{
+                String fileName = loadField.getText();
+                Library loadedLibrary = FileManager.loadFromFile(fileName);
+                library.getBooks().clear();
+                library.getBooks().addAll(loadedLibrary.getBooks());
+                JOptionPane.showMessageDialog(null, "File loaded successfully!");
+            });
         });
 
         panel.setBackground(Color.LIGHT_GRAY);
