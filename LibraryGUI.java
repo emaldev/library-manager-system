@@ -154,6 +154,32 @@ public class LibraryGUI {
             
         });
 
+        // remove book 
+        removerButton.addActionListener(e6 ->{
+            JFrame removFrame = new JFrame("Remove Book");
+            removFrame.setSize(300, 200);
+            JLabel idLabel = new JLabel("Enter ID:");
+            JTextField idField = new JTextField(10);
+            JButton removeButton = new JButton("Remove");
+
+            JPanel removePanel = new JPanel();
+
+            removePanel.add(idLabel);
+            removePanel.add(idField);
+            removePanel.add(removeButton);
+            removFrame.add(removePanel);
+
+            removFrame.setVisible(true);
+
+          
+            removeButton.addActionListener(e7 ->{
+                int id = Integer.parseInt(idField.getText());
+                library.removeBook(id);
+            });
+
+        
+        });
+
         panel.setBackground(Color.LIGHT_GRAY);
         
     
