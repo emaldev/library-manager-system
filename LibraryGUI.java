@@ -179,6 +179,30 @@ public class LibraryGUI {
 
         
         });
+        // the save booke section .
+        saveButton.addActionListener(e8 ->{
+            JFrame saveFrame = new JFrame("Save Fiel");
+            saveFrame.setSize(399, 299);
+            JLabel fileLabel = new JLabel("File Name:");
+            JTextField fileField = new JTextField(15);
+            JButton saveFielButton  = new JButton("Save");
+            JPanel savePanel = new JPanel();
+
+            savePanel.add(fileLabel);
+            savePanel.add(fileField);
+            savePanel.add(saveFielButton);
+
+            saveFrame.add(savePanel);
+            saveFrame.setVisible(true);
+        
+
+        saveFielButton.addActionListener(e9 -> {
+            String fileName = fileField.getText();
+            FileManager.saveToFile(fileName, library);
+            JOptionPane.showMessageDialog(null, "File saved successfully!");
+        });
+
+        });
 
         panel.setBackground(Color.LIGHT_GRAY);
         
