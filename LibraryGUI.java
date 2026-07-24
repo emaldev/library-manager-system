@@ -182,7 +182,7 @@ public class LibraryGUI {
         });
         // the save booke section .
         saveButton.addActionListener(e8 ->{
-            JFrame saveFrame = new JFrame("Save Fiel");
+            JFrame saveFrame = new JFrame("Save File");
             saveFrame.setSize(399, 299);
             JLabel fileLabel = new JLabel("File Name:");
             JTextField fileField = new JTextField(15);
