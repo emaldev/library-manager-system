@@ -136,13 +136,21 @@ public class LibraryGUI {
         // search connect to the library.
         searchBookButton.addActionListener(e5 -> {
             String title = searchField.getText();
+            boolean found = false;
 
             for(Book b: library.getBooks()){
                 if(b.getTitle().equalsIgnoreCase(title) ){
                     // displaying the found book in the panel.
                     JOptionPane.showMessageDialog(null, b.toString());
+                    found =  true;
                 }
             }
+                 // if not found book 
+                if(!found){
+                    JOptionPane.showMessageDialog(null, "Book not found!");
+                }
+
+            
             
         });
 
