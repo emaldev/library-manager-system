@@ -23,7 +23,7 @@ public class LibraryGUI {
 
         // Create buttons in lib
         JButton addButton = new JButton("Add Book");
-        JButton removeButton = new JButton("Remove Book");
+        JButton removerButton = new JButton("Remove Book");
         JButton searchButton = new JButton("Search Book");
         JButton displayButton = new JButton("Display Books");
         JButton saveButton = new JButton("Save File");
@@ -35,7 +35,7 @@ public class LibraryGUI {
         // Add buttom to panel
         JPanel panel = new JPanel();
         panel.add(addButton);
-        panel.add(removeButton);
+        panel.add(removerButton);
         panel.add(searchButton);
         panel.add(displayButton);
         panel.add(saveButton);
@@ -156,7 +156,7 @@ public class LibraryGUI {
         });
 
         // remove book 
-        removeButton.addActionListener(e6 ->{
+        removerButton.addActionListener(e6 ->{
             JFrame removFrame = new JFrame("Remove Book");
             removFrame.setSize(300, 200);
             JLabel idLabel = new JLabel("Enter ID:");
