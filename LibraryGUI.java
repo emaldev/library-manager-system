@@ -107,8 +107,33 @@ public class LibraryGUI {
             displayFrame.setVisible(true);
         });
         
+        // search the book section.
+        searchButton.addActionListener(e4 -> {
+        JFrame searchFrame = new JFrame("Search Boook");
+        
+        searchFrame.setSize(300, 300);
+        
+        JLabel searchLabel = new JLabel("Enter Title:");
+
+        JTextField searchField = new JTextField(20);
+        JButton searchBookButton = new JButton("Search");
+
+        JPanel searchPanel = new JPanel();
+    
+        searchPanel.add(searchLabel);
+        searchPanel.add(searchField);
+        searchPanel.add(searchBookButton);
+        searchFrame.add(searchPanel);
+        searchFrame.setVisible(true);
+
+ 
+        searchFrame.setVisible(true);
+
+        });
 
         panel.setBackground(Color.LIGHT_GRAY);
+        
+    
        
 
 
