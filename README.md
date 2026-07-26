@@ -95,5 +95,6 @@ LibraryGUI.java
 ## Author
 
 Emal Hasanzada
+If you find this project useful, consider giving it a ⭐ and following me on GitHub.
 
 
